@@ -18,15 +18,18 @@ const setup = (p5: p5Types, canvasParent: Element) => {
 
 const draw = (p5: p5Types) => {
 	squareArrayApply(0, game.size, (row, col) => {
-		p5.fill(game.life[row][col] === 1 ? 255 : 0)
-		p5.square(col * scale, row * scale, scale)
+		const fillColor = game.life[row][col] === 1 ? 255 : 0
+		p5.fill(fillColor)
+
+		const x = col * scale
+		const y = row * scale
+		p5.square(x, y, scale)
 	})
 }
 
 const keyPressed = (p5: p5Types) => {
-	if (p5.keyCode === p5.RIGHT_ARROW) {
-		game.cycle()
-	}
+	const isRightArrow = p5.keyCode === p5.RIGHT_ARROW
+	if (isRightArrow) { game.cycle() }
 }
 
 const mousePressed = (p5: p5Types) => {
@@ -37,12 +40,11 @@ const mousePressed = (p5: p5Types) => {
 	const col = Math.floor(p5.mouseX / scale)
 	const row = Math.floor(p5.mouseY / scale)
 
+	const isLeftMouse = p5.mouseButton === p5.LEFT
+	const isRightMouse = p5.mouseButton === p5.RIGHT
 	if (isMouseInCanvas) {
-		if (p5.mouseButton === p5.LEFT) {
-			game.life[row][col] = 1
-		} else if (p5.mouseButton === p5.RIGHT) {
-			game.life[row][col] = 0
-		}
+		if (isLeftMouse) { game.life[row][col] = 1 }
+		else if (isRightMouse) { game.life[row][col] = 0 }
 	}
 }
 
