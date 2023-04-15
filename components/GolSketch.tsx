@@ -46,7 +46,7 @@ const mousePressed = (p5: p5Types) => {
 	}
 }
 
-export default function GowSketch() {
+export default function GolSketch() {
 	return (
 		<Sketch
 			setup={setup}
