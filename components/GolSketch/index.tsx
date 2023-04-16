@@ -3,7 +3,7 @@ import Gol from "@/lib/gol"
 import { setup, draw } from "./structure"
 import { keyPressed, mousePressed } from "./events"
 
-export const game = new Gol(16, true)
+export const game = new Gol(32, true)
 export let scale: number
 export const setScale = (s: any) => scale = s
 

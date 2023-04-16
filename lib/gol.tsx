@@ -13,13 +13,17 @@ export default class Gol {
 
 	constructor(size: number, noLife?: boolean) {
 		this.size = size
-		this.life = Array.from({ length: size }, () => new Uint8Array(size))
+		this.life = Gol.createLife(size)
 
 		if (!noLife) { this.randomize() }
 	}
 
 	private static lifeOrDeath() {
 		return Math.floor(Math.random() * 2)
+	}
+
+	private static createLife(size: number) {
+		return Array.from({ length: size }, () => new Uint8Array(size))
 	}
 
 	randomize() {
