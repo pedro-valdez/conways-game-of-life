@@ -1,5 +1,5 @@
 import p5Types from "p5"
-import { game, scale } from "."
+import { game } from "."
 
 export const keyPressed = (p5: p5Types) => {
 	const isRightArrow = p5.keyCode === p5.RIGHT_ARROW
@@ -11,8 +11,8 @@ export const mousePressed = (p5: p5Types) => {
 	const isMouseYInCanvas = p5.mouseY >= 0 && p5.mouseY < p5.height
 	const isMouseInCanvas = isMouseXInCanvas && isMouseYInCanvas
 
-	const col = Math.floor(p5.mouseX / scale)
-	const row = Math.floor(p5.mouseY / scale)
+	const col = Math.floor(p5.mouseX / game.getScale())
+	const row = Math.floor(p5.mouseY / game.getScale())
 
 	const isLeftMouse = p5.mouseButton === p5.LEFT
 	const isRightMouse = p5.mouseButton === p5.RIGHT
