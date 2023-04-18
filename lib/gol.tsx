@@ -26,6 +26,18 @@ export default class Gol {
 		return Array.from({ length: size }, () => new Uint8Array(size))
 	}
 
+	private resetChanges() {
+		this.changes = Array<[number, number, number]>()
+	}
+
+	reset() {
+		squareArrayApply(0, this.size, (row, col) => {
+			this.life[row][col] = 0
+		})
+
+		this.resetChanges()
+	}
+
 	randomize() {
 		squareArrayApply(0, this.size, (row, col) => {
 			this.life[row][col] = Gol.lifeOrDeath()
@@ -59,6 +71,6 @@ export default class Gol {
 			this.life[cell[0]][cell[1]] = cell[2]
 		}
 
-		this.changes = Array<[number, number, number]>()
+		this.resetChanges()
 	}
 }

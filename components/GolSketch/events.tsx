@@ -9,6 +9,10 @@ export const keyPressed = (p5: p5Types) => {
 	const SPACEBAR = 32
 	const isSpace = p5.keyCode === SPACEBAR
 	if (isSpace) { settings.isCycling = !settings.isCycling }
+
+	const R_KEY = 82
+	const isRKey = p5.keyCode === R_KEY
+	if (isRKey) { game.reset() }
 }
 
 export const mousePressed = (p5: p5Types) => {
