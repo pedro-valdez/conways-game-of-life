@@ -8,6 +8,7 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 	settings.scale = p5.width / game.size
 
 	p5.noStroke()
+	p5.frameRate(8)
 }
 
 export const draw = (p5: p5Types) => {
