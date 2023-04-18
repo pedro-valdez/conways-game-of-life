@@ -5,6 +5,10 @@ import settings from "./settings"
 export const keyPressed = (p5: p5Types) => {
 	const isRightArrow = p5.keyCode === p5.RIGHT_ARROW
 	if (isRightArrow) { game.cycle() }
+
+	const SPACEBAR = 32
+	const isSpace = p5.keyCode === SPACEBAR
+	if (isSpace) { settings.isCycling = !settings.isCycling }
 }
 
 export const mousePressed = (p5: p5Types) => {

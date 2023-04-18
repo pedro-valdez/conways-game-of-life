@@ -19,4 +19,6 @@ export const draw = (p5: p5Types) => {
 		const y = row * settings.scale
 		p5.square(x, y, settings.scale)
 	})
+
+	if (settings.isCycling) { game.cycle() }
 }
