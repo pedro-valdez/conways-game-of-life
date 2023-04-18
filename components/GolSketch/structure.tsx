@@ -1,7 +1,7 @@
 import p5Types from "p5"
 import { game } from "."
 import { squareArrayApply } from "@/lib/gol"
-import settings from "./settings"
+import settings from "@/lib/settings"
 
 export const setup = (p5: p5Types, canvasParent: Element) => {
 	p5.createCanvas(512, 512).parent(canvasParent)

@@ -1,6 +1,6 @@
 import p5Types from "p5"
 import { game } from "."
-import settings from "./settings"
+import settings from "@/lib/settings"
 
 export const keyPressed = (p5: p5Types) => {
 	const isRightArrow = p5.keyCode === p5.RIGHT_ARROW
