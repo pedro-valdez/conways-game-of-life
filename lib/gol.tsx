@@ -10,7 +10,6 @@ export default class Gol {
 	size: number
 	life: Array<Uint8Array>
 	changes = Array<[number, number, number]>()
-	private scale = 0
 
 	constructor(size: number, noLife?: boolean) {
 		this.size = size
@@ -18,12 +17,6 @@ export default class Gol {
 
 		if (!noLife) { this.randomize() }
 	}
-
-	setScale(scale: number) {
-		this.scale = scale
-	}
-
-	getScale() { return this.scale }
 
 	private static lifeOrDeath() {
 		return Math.floor(Math.random() * 2)

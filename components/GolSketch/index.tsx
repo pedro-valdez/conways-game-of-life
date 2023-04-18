@@ -3,6 +3,7 @@ import Gol from "@/lib/gol"
 import { setup, draw } from "./structure"
 import { keyPressed, mousePressed } from "./events"
 
+
 export const game = new Gol(32, true)
 
 const Sketch = dynamic(() => import('react-p5').then(mod => mod.default), {
