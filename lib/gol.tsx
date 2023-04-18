@@ -73,4 +73,10 @@ export default class Gol {
 
 		this.resetChanges()
 	}
+
+	resize(size: number) {
+		this.size = size
+		this.life = Gol.createLife(size)
+		this.resetChanges()
+	}
 }
