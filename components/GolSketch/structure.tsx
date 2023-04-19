@@ -3,6 +3,7 @@ import { game } from "."
 import { squareArrayApply } from "@/lib/gol"
 import settings from "@/lib/settings"
 
+let buttonContainer
 let resetButton
 let loopButton
 let cycleButton
@@ -14,14 +15,21 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 	p5.frameRate(8)
 
 	// Element creation
+	buttonContainer = p5.createDiv()
+	buttonContainer.parent(canvasParent)
+	buttonContainer.id("game-config")
+
 	resetButton = p5.createButton('Reset')
 	resetButton.mousePressed(() => game.reset())
+	resetButton.parent(buttonContainer)
 
 	loopButton = p5.createButton('Loop')
 	loopButton.mousePressed(() => settings.isCycling = !settings.isCycling)
+	loopButton.parent(buttonContainer)
 
 	cycleButton = p5.createButton('Next')
 	cycleButton.mousePressed(() => game.cycle())
+	cycleButton.parent(buttonContainer)
 }
 
 export const draw = (p5: p5Types) => {
