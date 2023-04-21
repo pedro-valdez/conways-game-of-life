@@ -12,13 +12,14 @@ let cycleButton
 type Color = string
 const dead: Color = colors.emerald["900"]
 const alive: Color = colors.emerald["500"]
+const schrodingers: Color = colors.emerald["700"] // because it's between alive and dead
 
 export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvasParent.id = "gol-container"
 	p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight).parent(canvasParent)
 	settings.scale = p5.width / game.size
 
-	p5.noStroke()
+	p5.stroke(schrodingers)
 	p5.frameRate(8)
 	p5.background(dead)
 
