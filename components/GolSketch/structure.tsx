@@ -2,11 +2,17 @@ import p5Types from "p5"
 import { game } from "."
 import { squareArrayApply } from "@/lib/gol"
 import settings from "@/lib/settings"
+import colors from "tailwindcss/colors"
 
 let buttonContainer
 let resetButton
 let loopButton
 let cycleButton
+
+type Color = string
+const dead: Color = colors.emerald["900"]
+const alive: Color = colors.emerald["500"]
+
 export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvasParent.id = "gol-container"
 	p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight).parent(canvasParent)
@@ -14,6 +20,7 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 
 	p5.noStroke()
 	p5.frameRate(8)
+	p5.background(dead)
 
 	// Element creation
 	buttonContainer = p5.createDiv()
@@ -35,7 +42,7 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 
 export const draw = (p5: p5Types) => {
 	squareArrayApply(0, game.size, (row, col) => {
-		const fillColor = game.life[row][col] === 1 ? 255 : 0
+		const fillColor = game.life[row][col] === 1 ? alive : dead
 		p5.fill(fillColor)
 
 		const x = col * settings.scale
