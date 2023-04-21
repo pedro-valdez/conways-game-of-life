@@ -9,7 +9,7 @@ let loopButton
 let cycleButton
 export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvasParent.id = "gol-container"
-	p5.createCanvas(512, 512).parent(canvasParent)
+	p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight).parent(canvasParent)
 	settings.scale = p5.width / game.size
 
 	p5.noStroke()
