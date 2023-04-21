@@ -8,6 +8,7 @@ let resetButton
 let loopButton
 let cycleButton
 export const setup = (p5: p5Types, canvasParent: Element) => {
+	canvasParent.id = "gol-container"
 	p5.createCanvas(512, 512).parent(canvasParent)
 	settings.scale = p5.width / game.size
 
@@ -17,7 +18,7 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 	// Element creation
 	buttonContainer = p5.createDiv()
 	buttonContainer.parent(canvasParent)
-	buttonContainer.id("game-config")
+	buttonContainer.id("game-config-container")
 
 	resetButton = p5.createButton('Reset')
 	resetButton.mousePressed(() => game.reset())
