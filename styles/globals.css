@@ -11,7 +11,12 @@
 }
 
 @layer base {
-	h1, h2, h3, h4 { @apply font-black text-white; }
+	h1, h2, h3, h4 { @apply font-black !text-emerald-300; }
 	h1 { @apply text-4xl; }
 	h2 { @apply text-2xl; }
+}
+
+@layer components {
+	.rules span { @apply font-bold text-emerald-300; }
+	.rules li { @apply list-none; }
 }
