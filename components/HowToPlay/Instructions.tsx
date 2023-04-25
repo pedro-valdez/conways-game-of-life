@@ -1,11 +1,26 @@
 export default function() {
 	return (
-		<ul className="list-none">
-			<li>Left click a cell to mark it as alive.</li>
-			<li>Right click a cell to mark it as dead.</li>
-			<li>Spacebar to play/pause Life.</li>
-			<li>R to reset Life.</li>
-			<li>Right arrow while paused to go forward one cycle.</li>
+		<ul className="list-none rules">
+			<li>
+				<span>Left click </span>
+				 a cell to mark it as alive.
+			</li>
+			<li>
+				<span>Right click </span>
+				a cell to mark it as dead.
+			</li>
+			<li>
+				<span>Spacebar </span>
+				to play/pause Life.
+			</li>
+			<li>
+				<span>R </span>
+				to reset Life.
+			</li>
+			<li>
+				<span>Right arrow </span>
+				while paused to go forward one cycle.
+			</li>
 		</ul>
 	)
 }
