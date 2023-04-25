@@ -3,9 +3,9 @@ export default function() {
 		<ul className="list-none">
 			<li>Left click a cell to mark it as alive.</li>
 			<li>Right click a cell to mark it as dead.</li>
-			<li>Press spacebar to play/pause Life.</li>
-			<li>Press r to reset Life.</li>
-			<li>While Life is paused you can press right arrow to go forward one cycle.</li>
+			<li>Spacebar to play/pause Life.</li>
+			<li>R to reset Life.</li>
+			<li>Right arrow while paused to go forward one cycle.</li>
 		</ul>
 	)
 }
