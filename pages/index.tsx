@@ -9,7 +9,7 @@ const inter = Inter({
 
 export default function Home() {
   return (
-		<main className={`bg-emerald-950 text-white ${inter.className}`}>
+		<main className={`text-white ${inter.className}`}>
 			<div className="px-4">
 				<GolSection />
 
