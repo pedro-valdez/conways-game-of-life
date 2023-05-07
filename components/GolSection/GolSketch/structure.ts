@@ -11,8 +11,6 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 
 	world = new World(p5)
 
-	world.scale = p5.width / game.size
-
 	p5.stroke(world.colors.schrodingers)
 	p5.frameRate(8)
 	p5.background(world.colors.dead)
