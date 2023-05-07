@@ -24,8 +24,16 @@ export const keyPressed = (p5: p5Types) => {
 }
 
 export const mousePressed = (p5: p5Types) => {
-	const col = Math.floor(p5.mouseX / world.scale)
-	const row = Math.floor(p5.mouseY / world.scale)
+	const centeredMouseY = p5.mouseY - (p5.height / 2)
+	const centeredMouseX = p5.mouseX - (p5.width / 2)
+	const mouseRow = centeredMouseY / world.projectedScale
+	const mouseCol = centeredMouseX / world.projectedScale
+	const cameraRow = world.camera.eyeY / world.scale
+	const cameraCol = world.camera.eyeX / world.scale
+	const row = Math.floor(cameraRow + mouseRow)
+	const col = Math.floor(cameraCol + mouseCol)
+
+	console.log(mouseRow, mouseCol)
 
 	const isLeftMouse = p5.mouseButton === p5.LEFT
 	const isRightMouse = p5.mouseButton === p5.RIGHT

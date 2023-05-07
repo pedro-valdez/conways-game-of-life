@@ -25,7 +25,7 @@ export default class World {
 		this.camera = p5.createCamera()
 		this.zoomOriginal = (p5.height / 2) / p5.tan(p5.PI / 6)
 		this.zoom = this.zoomOriginal
-		this.projectedScale = (this.zoomOriginal / this.zoom) / this.scale
+		this.projectedScale = (this.zoomOriginal / this.zoom) * this.scale
 	}
 
 	offsetZoom(zoomOffset: number) {
