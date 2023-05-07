@@ -45,7 +45,7 @@ export const mousePressed = (p5: p5Types) => {
 export const mouseWheel = (p5: p5Types, event: any) => {
 	if (isMouseInCanvas(p5)) {
 		event.preventDefault() 
-		const zoomOffset = event.delta
-		world.camera.move(0, 0, zoomOffset)
+		const zoomOffset = event.delta > 0 ? world.scale / 2 : -(world.scale / 2)
+		world.offsetZoom(zoomOffset)
 	}
 }

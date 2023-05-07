@@ -11,8 +11,11 @@ export default class World {
 	 * because it doesn't let you access certail fields like eyeX.
 	 */
 	camera: any
+	zoomOriginal: number
+	zoom: number
+	projectedScale: number
 	constructor(p5: p5Types) {
-		this.scale = 10
+		this.scale = 100
 		this.isCycling = false
 		this.colors = {
 			dead: colors.emerald["900"],
@@ -20,5 +23,18 @@ export default class World {
 			alive: colors.emerald["500"],
 		}
 		this.camera = p5.createCamera()
+		this.zoomOriginal = (p5.height / 2) / p5.tan(p5.PI / 6)
+		this.zoom = this.zoomOriginal
+		this.projectedScale = (this.zoomOriginal / this.zoom) / this.scale
+	}
+
+	offsetZoom(zoomOffset: number) {
+		this.zoom += zoomOffset
+		this.camera.move(0, 0, zoomOffset)
+		this.updateProjectedScale(this.zoom)
+	}
+
+	updateProjectedScale(zoom: number) {
+		this.projectedScale = (this.zoomOriginal / zoom) * this.scale
 	}
 }
