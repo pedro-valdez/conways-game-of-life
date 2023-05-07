@@ -36,6 +36,7 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 }
 
 export const draw = (p5: p5Types) => {
+	p5.background(world.colors.dead)
 	squareArrayApply(0, game.size, (row, col) => {
 		const fillColor = game.life[row][col] === 1 ? world.colors.alive : world.colors.dead
 		p5.fill(fillColor)

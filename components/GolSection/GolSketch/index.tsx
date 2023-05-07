@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 import Gol from "@/lib/gol"
 import { setup, draw } from "./structure"
-import { keyPressed, mousePressed } from "./events"
+import { keyPressed, mousePressed, mouseWheel } from "./events"
 
 
 export const game = new Gol(32, true)
@@ -17,6 +17,7 @@ export default function GolSketch() {
 			draw={draw}
 			keyPressed={keyPressed}
 			mousePressed={mousePressed}
+			mouseWheel={mouseWheel}
 		/>
 	)
 }
