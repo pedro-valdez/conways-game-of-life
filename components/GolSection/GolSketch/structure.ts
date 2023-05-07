@@ -7,7 +7,7 @@ export let world: World
 
 export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvasParent.id = "gol-container"
-	p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight).parent(canvasParent)
+	p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight, p5.WEBGL).parent(canvasParent)
 
 	world = new World(p5)
 
