@@ -1,6 +1,5 @@
 import p5Types from "p5"
-import { game } from "."
-import settings from "@/lib/settings"
+import { game, world } from "."
 
 export const keyPressed = (p5: p5Types) => {
 	const isRightArrow = p5.keyCode === p5.RIGHT_ARROW
@@ -8,7 +7,7 @@ export const keyPressed = (p5: p5Types) => {
 
 	const SPACEBAR = 32
 	const isSpace = p5.keyCode === SPACEBAR
-	if (isSpace) { settings.isCycling = !settings.isCycling }
+	if (isSpace) { world.isCycling = !world.isCycling }
 
 	const R_KEY = 82
 	const isRKey = p5.keyCode === R_KEY
@@ -20,8 +19,8 @@ export const mousePressed = (p5: p5Types) => {
 	const isMouseYInCanvas = p5.mouseY >= 0 && p5.mouseY < p5.height
 	const isMouseInCanvas = isMouseXInCanvas && isMouseYInCanvas
 
-	const col = Math.floor(p5.mouseX / settings.scale)
-	const row = Math.floor(p5.mouseY / settings.scale)
+	const col = Math.floor(p5.mouseX / world.scale)
+	const row = Math.floor(p5.mouseY / world.scale)
 
 	const isLeftMouse = p5.mouseButton === p5.LEFT
 	const isRightMouse = p5.mouseButton === p5.RIGHT

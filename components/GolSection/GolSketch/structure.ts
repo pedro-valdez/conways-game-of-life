@@ -1,23 +1,16 @@
 import p5Types from "p5"
-import { game } from "."
+import { game, world } from "."
 import { squareArrayApply } from "@/lib/gol"
-import settings from "@/lib/settings"
-import colors from "tailwindcss/colors"
 
-
-type Color = string
-const dead: Color = colors.emerald["900"]
-const alive: Color = colors.emerald["500"]
-const schrodingers: Color = colors.emerald["700"] // because it's between alive and dead
 
 export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvasParent.id = "gol-container"
 	p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight).parent(canvasParent)
-	settings.scale = p5.width / game.size
+	world.scale = p5.width / game.size
 
-	p5.stroke(schrodingers)
+	p5.stroke(world.colors.schrodingers)
 	p5.frameRate(8)
-	p5.background(dead)
+	p5.background(world.colors.dead)
 
 	// Element creation
 	const buttonContainer = p5.createDiv()
@@ -29,7 +22,7 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 	resetButton.parent(buttonContainer)
 
 	const loopButton = p5.createButton('Loop')
-	loopButton.mousePressed(() => settings.isCycling = !settings.isCycling)
+	loopButton.mousePressed(() => world.isCycling = !world.isCycling)
 	loopButton.parent(buttonContainer)
 
 	const cycleButton = p5.createButton('Next')
@@ -39,13 +32,13 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 
 export const draw = (p5: p5Types) => {
 	squareArrayApply(0, game.size, (row, col) => {
-		const fillColor = game.life[row][col] === 1 ? alive : dead
+		const fillColor = game.life[row][col] === 1 ? world.colors.alive : world.colors.dead
 		p5.fill(fillColor)
 
-		const x = col * settings.scale
-		const y = row * settings.scale
-		p5.square(x, y, settings.scale)
+		const x = col * world.scale
+		const y = row * world.scale
+		p5.square(x, y, world.scale)
 	})
 
-	if (settings.isCycling) { game.cycle() }
+	if (world.isCycling) { game.cycle() }
 }
