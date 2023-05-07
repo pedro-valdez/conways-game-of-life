@@ -11,8 +11,9 @@ const isMouseInCanvas = (p5: p5Types) => {
 }
 
 export const keyPressed = (p5: p5Types) => {
-	const isRightArrow = p5.keyCode === p5.RIGHT_ARROW
-	if (isRightArrow) { game.cycle() }
+	const N_KEY = 78
+	const isNKey = p5.keyCode === N_KEY
+	if (isNKey) { game.cycle() }
 
 	const SPACEBAR = 32
 	const isSpace = p5.keyCode === SPACEBAR
