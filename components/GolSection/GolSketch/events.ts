@@ -34,8 +34,6 @@ export const mousePressed = (p5: p5Types) => {
 	const row = Math.floor(cameraRow + mouseRow)
 	const col = Math.floor(cameraCol + mouseCol)
 
-	console.log(mouseRow, mouseCol)
-
 	const isLeftMouse = p5.mouseButton === p5.LEFT
 	const isRightMouse = p5.mouseButton === p5.RIGHT
 	if (isMouseInCanvas(p5)) {
