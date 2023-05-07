@@ -14,6 +14,7 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 	p5.stroke(world.colors.schrodingers)
 	p5.frameRate(8)
 	p5.background(world.colors.dead)
+	p5.strokeWeight(world.scale / 10)
 
 	// Element creation
 	const buttonContainer = p5.createDiv()
