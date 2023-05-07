@@ -1,11 +1,16 @@
 import p5Types from "p5"
-import { game, world } from "."
+import { game } from "."
 import { squareArrayApply } from "@/lib/gol"
+import World from "@/lib/world"
 
+export let world: World
 
 export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvasParent.id = "gol-container"
 	p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight).parent(canvasParent)
+
+	world = new World(p5)
+
 	world.scale = p5.width / game.size
 
 	p5.stroke(world.colors.schrodingers)

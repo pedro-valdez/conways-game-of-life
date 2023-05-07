@@ -1,5 +1,6 @@
 import p5Types from "p5"
-import { game, world } from "."
+import { game } from "."
+import { world } from "./structure"
 
 export const keyPressed = (p5: p5Types) => {
 	const isRightArrow = p5.keyCode === p5.RIGHT_ARROW
