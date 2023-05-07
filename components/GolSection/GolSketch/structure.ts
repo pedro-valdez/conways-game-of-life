@@ -22,6 +22,8 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvas.attribute("oncontextmenu", "return false;")
 
 	world = new World(p5)
+	const centerOfLife = world.scale * game.life.length / 2
+	world.camera.move(centerOfLife, centerOfLife, 0)
 
 	p5.stroke(world.colors.schrodingers)
 	p5.background(world.colors.dead)
