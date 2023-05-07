@@ -4,10 +4,6 @@ import { squareArrayApply } from "@/lib/gol"
 import settings from "@/lib/settings"
 import colors from "tailwindcss/colors"
 
-let buttonContainer
-let resetButton
-let loopButton
-let cycleButton
 
 type Color = string
 const dead: Color = colors.emerald["900"]
@@ -24,19 +20,19 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 	p5.background(dead)
 
 	// Element creation
-	buttonContainer = p5.createDiv()
+	const buttonContainer = p5.createDiv()
 	buttonContainer.parent(canvasParent)
 	buttonContainer.id("game-config-container")
 
-	resetButton = p5.createButton('Reset')
+	const resetButton = p5.createButton('Reset')
 	resetButton.mousePressed(() => game.reset())
 	resetButton.parent(buttonContainer)
 
-	loopButton = p5.createButton('Loop')
+	const loopButton = p5.createButton('Loop')
 	loopButton.mousePressed(() => settings.isCycling = !settings.isCycling)
 	loopButton.parent(buttonContainer)
 
-	cycleButton = p5.createButton('Next')
+	const cycleButton = p5.createButton('Next')
 	cycleButton.mousePressed(() => game.cycle())
 	cycleButton.parent(buttonContainer)
 }
