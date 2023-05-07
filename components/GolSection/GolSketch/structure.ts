@@ -5,6 +5,17 @@ import World from "@/lib/world"
 
 export let world: World
 
+export const movement = (p5: p5Types) => {
+	const W_KEY = 87
+	const A_KEY = 65
+	const S_KEY = 83
+	const D_KEY = 68
+	if (p5.keyIsDown(W_KEY)) { world.camera.move(0, -world.scale / 5, 0) }
+	if (p5.keyIsDown(A_KEY)) { world.camera.move(-world.scale / 5, 0, 0) }
+	if (p5.keyIsDown(S_KEY)) { world.camera.move(0, world.scale / 5, 0) }
+	if (p5.keyIsDown(D_KEY)) { world.camera.move(world.scale / 5, 0, 0) }
+}
+
 export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvasParent.id = "gol-container"
 	p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight, p5.WEBGL).parent(canvasParent)
@@ -12,7 +23,6 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 	world = new World(p5)
 
 	p5.stroke(world.colors.schrodingers)
-	p5.frameRate(8)
 	p5.background(world.colors.dead)
 	p5.strokeWeight(world.scale / 10)
 
@@ -36,6 +46,7 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 
 export const draw = (p5: p5Types) => {
 	p5.background(world.colors.dead)
+	movement(p5)
 	squareArrayApply(0, game.size, (row, col) => {
 		const fillColor = game.life[row][col] === 1 ? world.colors.alive : world.colors.dead
 		p5.fill(fillColor)
