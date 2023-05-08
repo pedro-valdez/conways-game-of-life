@@ -18,8 +18,12 @@ export default function() {
 				to reset Life.
 			</li>
 			<li>
-				<span>Right arrow </span>
+				<span>N </span>
 				while paused to go forward one cycle.
+			</li>
+			<li>
+				<span>WASD keys</span>
+				to pan the camera around.
 			</li>
 		</ul>
 	)
