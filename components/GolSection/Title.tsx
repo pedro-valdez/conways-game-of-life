@@ -1,7 +1,7 @@
 export default function Title() {
 	return (
 		<h1>
-			Conway&aposs<br className="sm:hidden"/> Game of Life
+			Conway&apos;s<br className="sm:hidden"/> Game of Life
 		</h1>
 	)
 }
