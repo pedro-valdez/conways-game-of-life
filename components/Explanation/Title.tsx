@@ -1,4 +1,4 @@
-export default function() {
+export default function Title() {
 	return (
 		<h2>Explanation</h2>
 	)
