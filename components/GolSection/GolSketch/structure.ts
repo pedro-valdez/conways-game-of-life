@@ -18,7 +18,7 @@ export const movement = (p5: p5Types) => {
 
 export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvasParent.id = "gol-container"
-	const canvas = p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight, p5.WEBGL).parent(canvasParent)
+	const canvas = p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(canvasParent)
 	canvas.attribute("oncontextmenu", "return false;")
 
 	world = new World(p5)
