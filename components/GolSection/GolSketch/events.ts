@@ -45,14 +45,15 @@ export const mousePressed = (p5: p5Types) => {
 
 /*
  * p5Types claims the type of event is (UIEvent | undefined),
- * however, UIEvent does not have the property delta,
+ * however, UIEvent does not have the property deltaY,
  * which appears in the p5 reference.
  *
  * For now careful use of the type any will do.
  */
 export const mouseWheel = (p5: p5Types, event: any) => {
 	if (isMouseInCanvas(p5)) {
-		const zoomOffset = event.delta > 0 ? world.scale / 2 : -(world.scale / 2)
+		console.log(event)
+		const zoomOffset = event.deltaY > 0 ? world.scale / 2 : -(world.scale / 2)
 		world.offsetZoom(zoomOffset)
 	}
 }
