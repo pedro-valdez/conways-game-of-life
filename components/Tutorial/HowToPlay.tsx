@@ -26,8 +26,12 @@ export default function HowToPlay() {
 						while paused to go forward one cycle.
 					</li>
 					<li>
-						<span className="font-bold text-primary">WASD keys</span>
+						<span className="font-bold text-primary">WASD keys </span>
 						to pan the camera around.
+					</li>
+					<li>
+						<span className="font-bold text-primary">Mouse wheel </span>
+						to zoom in/out.
 					</li>
 				</ul>
 			</div>
