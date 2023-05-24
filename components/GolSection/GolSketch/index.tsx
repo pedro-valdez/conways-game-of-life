@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 import Gol from "@/lib/gol"
 import { setup, draw } from "./structure"
-import { keyPressed, mousePressed, mouseWheel } from "./events"
+import { keyPressed } from "./events"
 import { windowResized } from "./environment"
 
 
@@ -17,8 +17,6 @@ export default function GolSketch() {
 			setup={setup}
 			draw={draw}
 			keyPressed={keyPressed}
-			mousePressed={mousePressed}
-			mouseWheel={mouseWheel}
 			windowResized={windowResized}
 		/>
 	)

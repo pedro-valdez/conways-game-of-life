@@ -2,6 +2,7 @@ import p5Types from "p5"
 import { game } from "."
 import { squareArrayApply } from "@/lib/gol"
 import World from "@/lib/world"
+import { mousePressed, mouseWheel } from "./events"
 
 export let world: World
 
@@ -20,6 +21,13 @@ export const setup = (p5: p5Types, canvasParent: Element) => {
 	canvasParent.id = "gol-container"
 	const canvas = p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(canvasParent)
 	canvas.attribute("oncontextmenu", "return false;")
+	/*
+	 * NOTE: Why attach functions to canvas instead of passing as props in GolSketch (./index.tsx)?
+	 * When you pass the functions as props they get attached to the window.
+	 * If you attach the functions to the canvas they can only be triggered by the canvas.
+	 */
+	canvas.mousePressed(() => mousePressed(p5))
+	canvas.mouseWheel((event) => mouseWheel(p5, event))
 
 	world = new World(p5)
 	const centerOfLife = world.scale * game.life.length / 2
