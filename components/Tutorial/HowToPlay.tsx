@@ -1,6 +1,8 @@
+import Navigation from "./Navigation"
+
 export default function HowToPlay() {
 	return (
-		<section className="carousel-item w-full" id="slide2">
+		<section className="carousel-item w-full" id="how-to-play">
 			<div>
 				<h3>How to Play</h3>
 				<p>Since Life is a zero player game, it is quite simple! Here are some things to do:</p>
@@ -34,6 +36,7 @@ export default function HowToPlay() {
 						to zoom in/out.
 					</li>
 				</ul>
+				<Navigation left="#explanation" right="#explanation"/>
 			</div>
 		</section>
 	)
