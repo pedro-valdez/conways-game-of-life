@@ -10,13 +10,7 @@ const isMouseInCanvas = (p5: p5Types) => {
 	return isMouseInCanvas
 }
 
-/*
- * event needs to be of type UIEvent, however it is really a KeyBoard event.
- * To make TypeScript stop complaining I will use type of any.
- */
-export const keyPressed = (p5: p5Types, event: any) => {
-	event.preventDefault()
-
+export const keyPressed = (p5: p5Types) => {
 	const N_KEY = 78
 	const isNKey = p5.keyCode === N_KEY
 	if (isNKey) { game.cycle() }
@@ -58,7 +52,6 @@ export const mousePressed = (p5: p5Types) => {
  */
 export const mouseWheel = (p5: p5Types, event: any) => {
 	if (isMouseInCanvas(p5)) {
-		event.preventDefault() 
 		const zoomOffset = event.delta > 0 ? world.scale / 2 : -(world.scale / 2)
 		world.offsetZoom(zoomOffset)
 	}
