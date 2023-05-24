@@ -1,5 +1,4 @@
 import p5Types from "p5"
-import colors from "tailwindcss/colors"
 
 // Class for settings regarding how to draw the GoL.
 export default class World {
@@ -17,10 +16,15 @@ export default class World {
 	constructor(p5: p5Types) {
 		this.scale = 100
 		this.isCycling = false
+		/*
+		 * Colors had to be hardcoded since daisyui calculates some colors on the fly,
+		 * and the CSS variables used are in HSL percentages, which doesn't play
+		 * nice with p5.
+		 */
 		this.colors = {
-			dead: colors.emerald["900"],
-			schrodingers: colors.emerald["700"],
-			alive: colors.emerald["500"],
+			dead: "#003111",
+			schrodingers: "#189343",
+			alive: "#1eb854",
 		}
 		this.camera = p5.createCamera()
 		this.zoomOriginal = (p5.height / 2) / p5.tan(p5.PI / 6)
