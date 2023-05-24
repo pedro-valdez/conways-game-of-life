@@ -3,4 +3,4 @@
 @tailwind utilities;
 
 #gol-container { @apply h-full relative; }
-#game-config-container { @apply absolute right-4 bottom-4 flex gap-x-4; }
+#game-config-container { @apply absolute right-4 bottom-4 flex gap-x-4 font-bold; }

@@ -6,27 +6,27 @@ export default function HowToPlay() {
 				<p>Since Life is a zero player game, it is quite simple! Here are some things to do:</p>
 				<ul>
 					<li>
-						<span>Left click </span>
+						<span className="font-bold text-primary">Left click </span>
 						a cell to mark it as alive.
 					</li>
 					<li>
-						<span>Right click </span>
+						<span className="font-bold text-primary">Right click </span>
 						a cell to mark it as dead.
 					</li>
 					<li>
-						<span>Spacebar </span>
+						<span className="font-bold text-primary">Spacebar </span>
 						to play/pause Life.
 					</li>
 					<li>
-						<span>R </span>
+						<span className="font-bold text-primary">R </span>
 						to reset Life.
 					</li>
 					<li>
-						<span>N </span>
+						<span className="font-bold text-primary">N </span>
 						while paused to go forward one cycle.
 					</li>
 					<li>
-						<span>WASD keys</span>
+						<span className="font-bold text-primary">WASD keys</span>
 						to pan the camera around.
 					</li>
 				</ul>

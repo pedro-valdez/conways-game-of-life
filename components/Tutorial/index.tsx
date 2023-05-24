@@ -16,7 +16,7 @@ export default function Tutorial() {
 				>
 					<HiXCircle />
 				</button>
-				<div className="carousel w-full h-full items-center">
+				<div className="carousel w-full h-full items-center gap-x-[4em]">
 					<Explanation />
 					<HowToPlay />
 				</div>
