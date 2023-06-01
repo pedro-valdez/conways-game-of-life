@@ -4,7 +4,7 @@ import HowToPlay from "./HowToPlay"
 import { HiXCircle } from "react-icons/hi2"
 
 export default function Tutorial() {
-	const [isTutorialOpen, setIsTutorialOpen] = useState(true)
+	const [isTutorialOpen, setIsTutorialOpen] = useState(false)
 
 	return (
 		<>
